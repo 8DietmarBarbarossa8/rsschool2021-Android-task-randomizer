@@ -10,7 +10,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
+        android:fontFamily="sans-serif-black"
         android:textAlignment="center"
+        android:textColor="@color/elementsColor"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,22 +21,33 @@
 
     <EditText
         android:id="@+id/min_value"
-        android:layout_width="200dp"
+        android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:hint="Min"
+        android:fontFamily="sans-serif-black"
+        android:hint="Minimal "
         android:inputType="number"
+        android:textColor="@color/elementsColor"
+        android:textColorHighlight="@color/elementsColor"
+        android:textColorHint="@color/elementsColor"
+        android:textColorLink="@color/elementsColor"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/previous_result" />
 
     <EditText
         android:id="@+id/max_value"
-        android:layout_width="200dp"
+        android:layout_width="230dp"
         android:layout_height="wrap_content"
-        android:hint="Max"
+        android:fontFamily="sans-serif-black"
+        android:hint="Maximum"
         android:inputType="number"
+        android:textColor="@color/elementsColor"
+        android:textColorHighlight="@color/elementsColor"
+        android:textColorHint="@color/elementsColor"
+        android:textColorLink="@color/elementsColor"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,13 +55,18 @@
 
     <Button
         android:id="@+id/generate"
-        android:layout_width="200dp"
+        android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
+        android:backgroundTint="@color/elementsColor"
+        android:fontFamily="sans-serif-black"
         android:text="Generate"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/max_value" />
+        app:layout_constraintTop_toBottomOf="@id/max_value"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

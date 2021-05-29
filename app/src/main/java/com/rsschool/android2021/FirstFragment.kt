@@ -5,13 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 
-class FirstFragment : Fragment() {
+class FirstFragment : Fragment(), IBackActivity {
+    private lateinit var generateButton: Button
+    private lateinit var previousResult: TextView
 
-    private var generateButton: Button? = null
-    private var previousResult: TextView? = null
+    private lateinit var minValue: EditText
+    private lateinit var maxValue: EditText
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,25 +30,42 @@ class FirstFragment : Fragment() {
         previousResult = view.findViewById(R.id.previous_result)
         generateButton = view.findViewById(R.id.generate)
 
-        val result = arguments?.getInt(PREVIOUS_RESULT_KEY)
-        previousResult?.text = "Previous result: ${result.toString()}"
+        minValue = view.findViewById(R.id.min_value) as EditText
+        maxValue = view.findViewById(R.id.max_value) as EditText
 
-        // TODO: val min = ...
-        // TODO: val max = ...
+        val scoreInfo = arguments?.getInt(PREVIOUS_RESULT_KEY)
+        previousResult?.text = "Previous result: ${scoreInfo.toString()}"
 
         generateButton?.setOnClickListener {
-            // TODO: send min and max to the SecondFragment
+            if (minValue.length() != 0 && maxValue.length() != 0){
+                val min: Int? = processHugeNumber(minValue.text.toString())
+                val max: Int? = processHugeNumber(maxValue.text.toString())
+                if (min != null && max != null){
+                    if (max >= min)
+                        (activity as IFragmentsActions).sendMinAndMaxValues(min, max)
+                    else
+                        Toast.makeText(context, R.string.compareMessage, Toast.LENGTH_SHORT).show()
+                } else
+                    Toast.makeText(context, R.string.numberOutOfBounds, Toast.LENGTH_SHORT).show()
+            } else
+                Toast.makeText(context, R.string.emptyMessage, Toast.LENGTH_SHORT).show()
         }
     }
 
-    companion object {
+    private fun processHugeNumber(hugeNumber: String): Int? =
+        try { hugeNumber.toInt() } catch (e: NumberFormatException) { null }
 
+    override fun isMayBackPrevious(): Boolean = false
+
+    companion object {
         @JvmStatic
         fun newInstance(previousResult: Int): FirstFragment {
             val fragment = FirstFragment()
             val args = Bundle()
+
             args.putInt(PREVIOUS_RESULT_KEY, previousResult)
             fragment.arguments = args
+
             return fragment
         }
 
