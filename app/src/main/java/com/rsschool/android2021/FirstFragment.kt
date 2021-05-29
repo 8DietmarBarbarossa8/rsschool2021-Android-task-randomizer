@@ -38,8 +38,8 @@ class FirstFragment : Fragment(), IBackActivity {
 
         generateButton?.setOnClickListener {
             if (minValue.length() != 0 && maxValue.length() != 0){
-                val min: Int? = processHugeNumber(minValue.text.toString())
-                val max: Int? = processHugeNumber(maxValue.text.toString())
+                val min: Int? = minValue.text.toString().toIntOrNull()
+                val max: Int? = maxValue.text.toString().toIntOrNull()
                 if (min != null && max != null){
                     if (max >= min)
                         (activity as IFragmentsActions).sendMinAndMaxValues(min, max)
@@ -51,9 +51,6 @@ class FirstFragment : Fragment(), IBackActivity {
                 Toast.makeText(context, R.string.emptyMessage, Toast.LENGTH_SHORT).show()
         }
     }
-
-    private fun processHugeNumber(hugeNumber: String): Int? =
-        try { hugeNumber.toInt() } catch (e: NumberFormatException) { null }
 
     override fun isMayBackPrevious(): Boolean = false
 
