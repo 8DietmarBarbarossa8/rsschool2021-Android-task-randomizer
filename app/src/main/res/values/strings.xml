@@ -1,6 +1,17 @@
 <resources>
     <string name="app_name">randomizer</string>
-    <string name="emptyMessage">"One of there fields are empty!"</string>
+
+    <string name="emptyMessage">One of there fields are empty!</string>
     <string name="numberOutOfBounds">One of there numbers went beyond the upper bound</string>
-    <string name="compareMessage">"Second number more than first number!"</string>
+    <string name="compareMessage">Second number more than first number!</string>
+    <string name="rangeEntryMessage">Count more than (max - min + 1)!</string>
+    <string name="outCountValueMessage">Count of result is not in [2,1000]!</string>
+
+    <string name="output">Set results (from 2 to 1000)</string>
+
+    <string name="titleAlertDialog">Exit</string>
+    <string name="messageAlertDialog">Do you want exit?</string>
+    <string name="positiveButton">Exit</string>
+    <string name="negativeButton">Cancel</string>
+    <string name="canceledMessage">Canceled!</string>
 </resources>

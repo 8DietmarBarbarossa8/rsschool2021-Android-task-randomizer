@@ -1,4 +1,4 @@
-package com.rsschool.android2021
+package com.rsschool.android2021.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,8 +7,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.rsschool.android2021.R
+import com.rsschool.android2021.interfaces.IBackActivity
+import com.rsschool.android2021.interfaces.IFragmentsActions
 
-class SecondFragment : Fragment(), IBackActivity {
+class SecondFragment : Fragment(),
+    IBackActivity {
     private var backButton: Button? = null
     private var resultText: TextView? = null
     private var result = 0
