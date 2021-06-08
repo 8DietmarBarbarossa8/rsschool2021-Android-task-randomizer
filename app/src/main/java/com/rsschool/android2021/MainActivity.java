@@ -61,7 +61,6 @@ public class MainActivity extends AppCompatActivity implements IFragmentsActions
         openThirdFragment(minValue, maxValue, count);
     }
 
-    @SuppressLint("ResourceAsColor")
     @Override
     public void onBackPressed() {
         if (!back.isMayBackPrevious()){
