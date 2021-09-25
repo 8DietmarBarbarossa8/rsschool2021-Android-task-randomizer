@@ -1,5 +1,6 @@
 package com.rsschool.android2021.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,6 +31,7 @@ class FirstFragment : Fragment(),
         return inflater.inflate(R.layout.fragment_first, container, false)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         previousResult = view.findViewById(R.id.previous_result)
@@ -40,11 +42,11 @@ class FirstFragment : Fragment(),
         maxValue = view.findViewById(R.id.max_value) as EditText
 
         val scoreInfo = arguments?.getInt(PREVIOUS_RESULT_KEY)
-        previousResult?.text = "Previous result: ${scoreInfo.toString()}"
+        previousResult.text = "Previous result: ${scoreInfo.toString()}"
 
         countResult = view.findViewById(R.id.count_result)
 
-        generateButton?.setOnClickListener {
+        generateButton.setOnClickListener {
             if (minValue.length() != 0 && maxValue.length() != 0 &&
                 (countResult.length() != 0 || !isVisiblyCountResultEditText)){
                 val min: Int? = minValue.text.toString().toIntOrNull()
@@ -62,13 +64,11 @@ class FirstFragment : Fragment(),
                                         .sendCountOfResults(min, max, count)
                                 else
                                     Toast.makeText(context, R.string.outCountValueMessage,
-                                    Toast.LENGTH_SHORT).show()
-                            }
-                            else
+                                        Toast.LENGTH_SHORT).show()
+                            } else
                                 Toast.makeText(context, R.string.rangeEntryMessage,
                                     Toast.LENGTH_SHORT).show()
-                    }
-                    else
+                    } else
                         Toast.makeText(context, R.string.compareMessage, Toast.LENGTH_SHORT).show()
                 } else
                     Toast.makeText(context, R.string.numberOutOfBounds, Toast.LENGTH_SHORT).show()

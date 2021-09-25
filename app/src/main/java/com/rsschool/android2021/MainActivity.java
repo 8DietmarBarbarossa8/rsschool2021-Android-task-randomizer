@@ -1,6 +1,5 @@
 package com.rsschool.android2021;
 
-import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -73,10 +72,8 @@ public class MainActivity extends AppCompatActivity implements IFragmentsActions
                     (dialog, which) -> finish());
 
             builder.setNegativeButton(R.string.negativeButton,
-                    (dialog, which) -> {
-                        Toast.makeText(this, R.string.canceledMessage,
-                                Toast.LENGTH_SHORT).show();
-                    });
+                    (dialog, which) -> Toast.makeText(this, R.string.canceledMessage,
+                            Toast.LENGTH_SHORT).show());
 
             AlertDialog alertDialog = builder.create();
             alertDialog.show();
