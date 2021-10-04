@@ -1,4 +1,4 @@
-package com.rsschool.android2021.interfaces;
+package com.rsschool.android2021;
 
 public interface IFragmentsActions {
     void sendPreviousNumber(int previousResult);

@@ -6,12 +6,16 @@
     <string name="compareMessage">Second number more than first number!</string>
     <string name="rangeEntryMessage">Count more than (max - min + 1)!</string>
     <string name="outCountValueMessage">Count of result is not in [2,1000]!</string>
-
-    <string name="output">Set results (from 2 to 1000)</string>
-
+    <string name="output">Multiple result (from 2 to 1000)</string>
     <string name="titleAlertDialog">Exit</string>
     <string name="messageAlertDialog">Do you want exit?</string>
     <string name="positiveButton">Exit</string>
     <string name="negativeButton">Cancel</string>
     <string name="canceledMessage">Canceled!</string>
+    <string name="result">Result:</string>
+    <string name="back">Back</string>
+    <string name="minimal">Minimal</string>
+    <string name="maximum">Maximum</string>
+    <string name="count_of_result">Count of result</string>
+    <string name="generate">Generate</string>
 </resources>

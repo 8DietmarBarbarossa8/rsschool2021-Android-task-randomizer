@@ -8,11 +8,9 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
 import com.rsschool.android2021.R
-import com.rsschool.android2021.interfaces.IBackActivity
-import com.rsschool.android2021.interfaces.IFragmentsActions
+import com.rsschool.android2021.IFragmentsActions
 
-class FirstFragment : Fragment(),
-    IBackActivity {
+class FirstFragment : Fragment() {
     private lateinit var generateButton: Button
     private lateinit var previousResult: TextView
 
@@ -88,8 +86,6 @@ class FirstFragment : Fragment(),
             }
         }
     }
-
-    override fun isMayBackPrevious(): Boolean = false
 
     companion object {
         @JvmStatic

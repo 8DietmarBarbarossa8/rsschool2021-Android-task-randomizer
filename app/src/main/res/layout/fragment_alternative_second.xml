@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ThirdFragment">
+    tools:context=".fragments.AlternativeSecondFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -13,14 +13,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
             android:id="@+id/resultTV"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Result:"
+            android:text="@string/result"
             android:layout_marginTop="4dp"
             android:fontFamily="sans-serif-black"
             android:textAlignment="center"
@@ -53,7 +53,7 @@
                 android:layout_marginTop="25dp"
                 android:backgroundTint="@color/elementsColor"
                 android:fontFamily="sans-serif-black"
-                android:text="Back"
+                android:text="@string/back"
                 android:layout_gravity="center"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
